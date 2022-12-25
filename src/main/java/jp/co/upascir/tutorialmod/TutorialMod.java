@@ -3,6 +3,9 @@ package jp.co.upascir.tutorialmod;
 import com.mojang.logging.LogUtils;
 import jp.co.upascir.tutorialmod.block.ModBlocks;
 import jp.co.upascir.tutorialmod.item.ModItems;
+import jp.co.upascir.tutorialmod.villager.ModVillagers;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -24,6 +27,7 @@ public class TutorialMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModVillagers.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -31,7 +35,9 @@ public class TutorialMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
+        event.enqueueWork(() -> {
+            ModVillagers.registerPOIs();
+        });
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
@@ -39,7 +45,7 @@ public class TutorialMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            // ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLUEBERRY_CROP.get(), RenderType.cutout());
         }
     }
 }
