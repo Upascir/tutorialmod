@@ -3,6 +3,7 @@ package jp.co.upascir.tutorialmod;
 import com.mojang.logging.LogUtils;
 import jp.co.upascir.tutorialmod.block.ModBlocks;
 import jp.co.upascir.tutorialmod.item.ModItems;
+import jp.co.upascir.tutorialmod.painting.ModPaintings;
 import jp.co.upascir.tutorialmod.villager.ModVillagers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -28,6 +29,7 @@ public class TutorialMod {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModVillagers.register(modEventBus);
+        ModPaintings.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
