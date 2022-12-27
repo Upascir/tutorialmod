@@ -5,6 +5,8 @@ import jp.co.upascir.tutorialmod.block.ModBlocks;
 import jp.co.upascir.tutorialmod.item.ModItems;
 import jp.co.upascir.tutorialmod.painting.ModPaintings;
 import jp.co.upascir.tutorialmod.villager.ModVillagers;
+import jp.co.upascir.tutorialmod.world.feature.ModConfiguredFeatures;
+import jp.co.upascir.tutorialmod.world.feature.ModPlacedFeatures;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
@@ -30,6 +32,8 @@ public class TutorialMod {
         ModBlocks.register(modEventBus);
         ModVillagers.register(modEventBus);
         ModPaintings.register(modEventBus);
+        ModConfiguredFeatures.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
