@@ -14,5 +14,7 @@
   "block.tutorialmod.blueberry_crop": "ブルーベリー",
 
   "itemGroup.tutorialtab": "チュートリアルタブ",
-  "entity.minecraft.villager.tutorialmod.jumpy_master": "ジャンプ職人"
+  "entity.minecraft.villager.tutorialmod.jumpy_master": "ジャンプ職人",
+  "key.category.tutorialmod.tutorial": "Tutorial Mod",
+  "key.tutorialmod.drink_water": "Drink Water"
 }
